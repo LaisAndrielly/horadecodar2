@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Maior Valor</title>
+</head>
+<body>
+    <h1>Digite 3 valores</h1>
+    <input type="number" id="valor1" placeholder="Valor 1">
+    <input type="number" id="valor2" placeholder="Valor 2">
+    <input type="number" id="valor3" placeholder="Valor 3">
+    <button onclick="encontrarMaior()">Encontrar Maior</button>
+
+    <h2>O maior valor é: <span id="resultado"></span></h2>
+
+    <script>
+        function encontrarMaior() {
+            const v1 = parseFloat(document.getElementById('valor1').value);
+            const v2 = parseFloat(document.getElementById('valor2').value);
+            const v3 = parseFloat(document.getElementById('valor3').value);
+            const maior = Math.max(v1, v2, v3);
+            document.getElementById('resultado').textContent = maior;
+        }
+    </script>
+</body>
+</html>
+

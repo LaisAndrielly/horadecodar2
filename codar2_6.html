@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Valores</title>
+</head>
+<body>
+    <h1>Digite 4 valores</h1>
+    <input type="number" id="valor1" placeholder="Valor 1">
+    <input type="number" id="valor2" placeholder="Valor 2">
+    <input type="number" id="valor3" placeholder="Valor 3">
+    <input type="number" id="valor4" placeholder="Valor 4">
+    <button onclick="mostrarResultados()">Mostrar Resultados</button>
+
+    <h2>Resultados:</h2>
+    <p>Primeiro valor: <span id="primeiro"></span></p>
+    <p>Último valor: <span id="ultimo"></span></p>
+    <p>Maior valor: <span id="maior"></span></p>
+
+    <script>
+        function mostrarResultados() {
+            const v1 = parseFloat(document.getElementById('valor1').value);
+            const v4 = parseFloat(document.getElementById('valor4').value);
+            const maior = Math.max(v1, 
+                parseFloat(document.getElementById('valor2').value), 
+                parseFloat(document.getElementById('valor3').value), 
+                v4
+            );
+
+            document.getElementById('primeiro').textContent = v1;
+            document.getElementById('ultimo').textContent = v4;
+            document.getElementById('maior').textContent = maior;
+        }
+    </script>
+</body>
+</html>

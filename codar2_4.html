@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Soma dos 2 Maiores</title>
+</head>
+<body>
+    <h1>Digite 3 valores</h1>
+    <input type="number" id="valor1" placeholder="Valor 1">
+    <input type="number" id="valor2" placeholder="Valor 2">
+    <input type="number" id="valor3" placeholder="Valor 3">
+    <button onclick="calcularSoma()">Calcular</button>
+
+    <h2>A soma dos 2 maiores é: <span id="resultado"></span></h2>
+
+    <script>
+        function calcularSoma() {
+            const v1 = parseFloat(document.getElementById('valor1').value);
+            const v2 = parseFloat(document.getElementById('valor2').value);
+            const v3 = parseFloat(document.getElementById('valor3').value);
+            
+            const maior1 = Math.max(v1, v2, v3);
+            const menor = Math.min(v1, v2, v3);
+            const soma = v1 + v2 + v3 - menor;
+
+            document.getElementById('resultado').textContent = soma;
+        }
+    </script>
+</body>
+</html>

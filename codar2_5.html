@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Média Aritmética</title>
+</head>
+<body>
+    <h1>Digite 6 valores</h1>
+    <input type="number" id="valor1" placeholder="Valor 1">
+    <input type="number" id="valor2" placeholder="Valor 2">
+    <input type="number" id="valor3" placeholder="Valor 3">
+    <input type="number" id="valor4" placeholder="Valor 4">
+    <input type="number" id="valor5" placeholder="Valor 5">
+    <input type="number" id="valor6" placeholder="Valor 6">
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+    <h2>Valores informados: <span id="valores"></span></h2>
+    <h2>A média aritmética é: <span id="resultado"></span></h2>
+
+    <script>
+        function calcularMedia() {
+            let soma = 0;
+            let valores = [];
+            for (let i = 1; i <= 6; i++) {
+                const valor = parseFloat(document.getElementById(`valor${i}`).value);
+                if (!isNaN(valor)) {
+                    valores.push(valor);
+                    soma += valor;
+                }
+            }
+            const media = soma / valores.length;
+            document.getElementById('valores').textContent = valores.join(', ');
+            document.getElementById('resultado').textContent = media.toFixed(2);
+        }
+    </script>
+</body>
+</html>

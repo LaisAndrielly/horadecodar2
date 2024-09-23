@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Soma de Números</title>
+</head>
+<body>
+    <h1>Digite 6 números</h1>
+    <input type="number" id="valor1" placeholder="Valor 1">
+    <input type="number" id="valor2" placeholder="Valor 2">
+    <input type="number" id="valor3" placeholder="Valor 3">
+    <input type="number" id="valor4" placeholder="Valor 4">
+    <input type="number" id="valor5" placeholder="Valor 5">
+    <input type="number" id="valor6" placeholder="Valor 6">
+    <button onclick="calcularSoma()">Calcular Soma</button>
+
+    <h2>Valores informados: <span id="valores"></span></h2>
+    <h2>Soma dos valores < 72: <span id="soma"></span></h2>
+
+    <script>
+        function calcularSoma() {
+            let soma = 0;
+            const valores = [];
+            for (let i = 1; i <= 6; i++) {
+                const valor = parseFloat(document.getElementById(`valor${i}`).value);
+                valores.push(valor);
+                if (valor < 72) {
+                    soma += valor;
+                }
+            }
+            document.getElementById('valores').textContent = valores.join(', ');
+            document.getElementById('soma').textContent = soma;
+        }
+    </script>
+</body>
+</html>
